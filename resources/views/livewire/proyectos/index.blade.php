@@ -35,13 +35,19 @@
 
             @forelse($proyectos as $proyecto)
                 <div class="bg-white border border-gray-200 shadow-sm px-8 py-5 mb-4 rounded-lg">
-                    <div class="flex justify-between items-center gap-4">
+                    <div class="flex justify-between items-center gap-2">
                         <div class="min-w-0">
                             <h3 class="text-lg font-semibold text-gray-900 break-words">{{ $proyecto->nombre }}</h3>
                             <p class="text-gray-600 mt-1 break-words">{{ $proyecto->descripcion }}</p>
                         </div>
 
                         <div class="flex items-center gap-2 shrink-0">
+                            
+                            <a href="{{ route('tareas.index', $proyecto) }}"
+                                class="inline-flex items-center justify-center px-5 py-3 text-sm font-medium text-white bg-emerald-600 rounded hover:bg-emerald-700 transition">
+                                Ver Tareas
+                             </a>
+
                             <a href="{{ route('proyectos.edit', $proyecto) }}"
                                class="inline-flex items-center justify-center px-3 py-1 text-xs font-medium text-white bg-gray-800 rounded hover:bg-gray-700 transition">
                                 Editar

@@ -15,4 +15,9 @@ class Proyecto extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function tareas()
+    {
+        return $this->hasMany(Tarea::class);
+    }
 }
